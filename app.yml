@@ -1,0 +1,15 @@
+---
+- name: Upload website tarball
+  ansible.builtin.copy:
+    src: website.tar.gz
+    dest: /tmp/website.tar.gz
+    mode: '0644'
+
+- name: Extract website tarball
+  ansible.builtin.unarchive:
+    src: /tmp/website.tar.gz
+    dest: /var/www/html/
+    remote_src: yes
+
+
+

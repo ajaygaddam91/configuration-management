@@ -1,0 +1,14 @@
+---
+- name: Ensure git is installed
+  ansible.builtin.package:
+    name: git
+    state: present
+
+- name: Clone website repository
+  ansible.builtin.git:
+    repo: 'https://github.com/<USERNAME>/<REPOSITORY>.git'
+    dest: /var/www/html/
+    version: main
+    force: yes
+    update: yes
+  notify: restart nginx  # Only if you want Nginx to reload on updates and your nginx handler is defined

@@ -1,0 +1,12 @@
+---
+- name: Adding SSH keys to authorized_keys
+  vars:
+  ansible_user:
+   - ajay
+
+   - name: Add SSH public key to authorized_keys
+     ansible.builtin.authorized_key:
+      user: "{{ ansible_user }}"
+      state: present
+      key: "{{ lookup('file', 'files/id_rsa.pub') }}"  
+  

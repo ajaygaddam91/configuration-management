@@ -1,0 +1,42 @@
+---
+vars:
+ software:
+  - fail2ban
+
+ utilities:
+  - curl
+  - wget
+  - zip
+  - unzip
+
+  - name: This task is to update for Debian/ubuntu
+    ansible.builtin.apt:
+    update_cache: yes
+    when: ansible_os_family=="Debian"
+
+  - name: This task is to update for RHEL/Centos/Fedora
+    ansible.builtin.dnf:
+     update_cache: true
+     name: '*'
+     state: latest
+    when: ansible_os_family=="RedHat"
+
+  - name: installing the utilities
+    ansible.builtin.package:
+     name: "{{ item }}"       
+     state: present
+    loop: "{{ utilities }}"
+
+  - name: installing fail2ban
+    ansible.builtin.package:
+     name: "{{ software }}"        
+     state: present     
+    notify: ensuring the fail2ban service is running
+
+---
+handlers:
+ - name: ensuring the fail2ban service is running
+   ansible.builtin.systemd_service:
+    name: fail2ban
+    state: restarted
+    enabled: yes

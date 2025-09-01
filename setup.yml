@@ -1,0 +1,11 @@
+---
+- name: This playbook is to create roles
+  hosts: all
+  become: true
+  gather_facts: true
+
+  roles:
+   - { role: base, tags: base }
+   - { role: nginx, tags: nginx }
+   - { role: app, tags: app }
+   - { role: ssh, tags: ssh }
