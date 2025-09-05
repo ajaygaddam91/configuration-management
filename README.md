@@ -1,11 +1,11 @@
-Project URL: https://github.com/ajaygaddam91/configuration-management
+# Configuration Management
 
-# project configuration-management
-## project URL
-Project URL: https://github.com/ajaygaddam91/configuration-management
-[
-project URL
-]
-(
-https://github.com/ajaygaddam91/configuration-management
-)
+## Project URL
+
+**Plain text URL:** https://github.com/ajaygaddam91/configuration-management
+
+**Clickable link:** [https://github.com/ajaygaddam91/configuration-management](https://github.com/ajaygaddam91/configuration-management)
+
+## Description
+
+This repository contains configuration management files and scripts.
