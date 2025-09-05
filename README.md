@@ -2,6 +2,8 @@
 
 ## Project URL
 
+[project URL](https://github.com/ajaygaddam91/configuration-management)
+
 **Plain text URL:** https://github.com/ajaygaddam91/configuration-management
 
 **Clickable link:** [https://github.com/ajaygaddam91/configuration-management](https://github.com/ajaygaddam91/configuration-management)
